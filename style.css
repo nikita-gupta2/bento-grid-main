@@ -28,8 +28,8 @@ body{
     background-color: hsla(255, 88%, 90%, 0.205);
 }
 main{  
-    height: 80%;
-    width: 900px;
+    height: 85%;
+    width: 1000px;
     display: grid;
     grid-template-columns: repeat(8,1fr);
     grid-template-rows: repeat(10,1fr);
@@ -60,7 +60,7 @@ main{
     color: hsl(39, 100%, 71%)
 }
 .container1 img{
-    width: 60%;
+    width: 50%;
     height: 2rem;
 }
 .container2{
@@ -81,9 +81,16 @@ main{
     font-weight: 500;
     font-size: 1.2rem;
 }
-.container2 img{
+.container2 .item2img{
     height: 2.5rem;
-    object-fit: cover;
+    margin-right: -1rem;
+    overflow: hidden;
+}
+.container2 img{
+    height: 100%;
+    width: auto;
+    transform: scaleX(1.3);  /* 👈 stretches only horizontally */
+    transform-origin: left;
 }
 .container3{
     grid-column: 5/7;
@@ -102,32 +109,46 @@ main{
     font-size: 1.2rem;
     padding-bottom: 0.5rem;
 }
+.container3 .item3img{
+    width: 100%;
+    margin-bottom: -1rem;
+    overflow: hidden;
+}
 .container3 img{
     width: 100%;
-    object-fit: cover;
+    height: auto;
+    transform: scaleY(0.8);  /* 👈 stretches only vertically */
+    transform-origin: top;
 }
 .container4{
     grid-column:  7/9;
     grid-row: 1/8;
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 1rem;
     background-color: hsl(254, 88%, 90%);
     overflow: hidden; 
-        display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     
 }
 .container4 h2{
     font-weight: 500;
-    font-size: 1.2rem; 
+    font-size: 1.5rem; 
     padding-bottom: 0.5rem;
 }
-.container4 img{
+.container4 .item4img{
     padding-bottom: 0.5rem;
-    height: 10rem;
-    object-fit: cover;
+    height: 14rem;
+    margin-right: -1rem;
+    overflow: hidden;
+}
+.container4 img{
+    height: 100%;
+    width: auto;
+    border-radius: 1rem;
+    transform: scaleX(1.6);  /* 👈 stretches only horizontally */
+    transform-origin: left; 
 }
 .container4 p{
     font-size: 16px;
@@ -145,11 +166,15 @@ main{
     color: hsl(0, 0%, 100%);
 }
 .container5 h1{
-    font-size: 28px;
+    font-size: 36px;
+}
+.container5 .item5img{
+    height: 100%;
+    width: 80%;
 }
 .container5 img{
     height: 100%;
-    width: 40%;
+    width: 100%;
 }
 .container6{
     grid-column: 3 /5;
@@ -164,7 +189,7 @@ main{
 
 }
 .container6 h1{
-    font-size: 36px;
+    font-size: 44px;
     align-self: start;
 }
 .container6 p{
@@ -217,3 +242,275 @@ h1, h2 {
   font-weight: 500;
 }
 
+@media(max-width:1050px){
+    main{  
+    height: 85%;
+    width: 800px;
+    }
+}
+@media((min-width: 550px) and (max-width:850px) ){
+    body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;  /* ✅ allow scroll */
+    overflow-y: auto;
+    }
+    main{  
+    width: 500px;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    height: auto;
+    justify-content: center;
+    flex-direction: column;
+    }
+    .container1{
+        padding: 3rem;
+    }
+    .container1 h1{
+    font-size: 3rem;
+    font-weight: 500;
+    }
+    .container1 p{
+    font-size: 1.2rem;
+    opacity: 0.9;
+    }
+    .container2 .item2img{
+    height: 3rem;
+    width: 100%;
+    margin-right: 0;
+    }
+    .container2 img{
+         transform: none;
+    }
+    .container2 h2{
+    font-weight: 500;
+    font-size: 1.5rem;
+    }
+    .container3 h2{
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+    align-self: flex-start;
+    }
+    .container3 .item3img{
+    width: 60%;
+    margin-bottom: -1rem;
+    align-self: flex-start;
+    overflow: hidden;
+    }
+    .container3 img{
+    width: 100%;
+    height: auto;
+    transform: scaleY(1.1);  /* 👈 stretches only vertically */
+    transform-origin: top;
+    }
+    .container4{
+        width: 100%;
+        height: auto;
+        align-items: center;
+    }
+    .container4 h2{
+    font-weight: 500;
+    font-size: 1.8rem; 
+    padding-bottom: 0.5rem;
+}
+.container4 .item4img{
+    padding-bottom: 0.5rem;
+    width: 100%;
+    height: 18rem;
+    margin-right: 0;
+}
+.container4 img{
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    transform: none;
+}
+.container4 p{
+    font-size: 20px;
+    text-align: center;
+}
+.container5{
+    flex-direction: column;
+}
+.container5 .item5img{
+    height: 80%;
+}
+.container5 h1{
+    text-align: center;
+}
+.container6 {
+    width: 100%;
+}
+.container6 h1{
+    font-size: 50px;
+    align-self: start;
+}
+.container6 p{
+    font-size: 24px;
+    padding-bottom: 1rem;
+}
+.container6 img{
+    align-items: start;
+    width: 100%;
+    height: 4rem;
+}
+.container7 h2{
+    font-size: 2rem;
+}
+.container7 img{
+    align-self: start;
+    width: auto;
+    height: 6rem;
+    padding-top: 1rem;
+}
+.container8{
+    width: 100%;
+}
+.container8 h2{
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    text-align: start;
+}
+.container8 img{
+    align-self: start;
+    width: auto;
+    height: 14rem;
+}
+}
+@media((min-width: 0) and (max-width:550px) ){
+    body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;  /* ✅ allow scroll */
+    overflow-y: auto;
+    }
+    main{  
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    height: auto;
+    justify-content: center;
+    flex-direction: column;
+    }
+    .container1{
+        padding: 1.5rem;
+    }
+    .container1 h1{
+    font-size: 2.5rem;
+    font-weight: 500;
+    }
+    .container1 p{
+    font-size: 1.2rem;
+    opacity: 0.9;
+    }
+    .container2 .item2img{
+    height: 3rem;
+    width: 100%;
+    margin-right: 0;
+    }
+    .container2 img{
+         transform: none;
+    }
+    .container2 h2{
+    font-weight: 500;
+    font-size: 1.5rem;
+    }
+    .container3 h2{
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+    align-self: flex-start;
+    }
+    .container3 .item3img{
+    width: 60%;
+    margin-bottom: -1rem;
+    align-self: flex-start;
+    overflow: hidden;
+    }
+    .container3 img{
+    width: 100%;
+    height: auto;
+    transform: scaleY(1.1);  /* 👈 stretches only vertically */
+    transform-origin: top;
+    }
+    .container4{
+        width: 100%;
+        height: auto;
+        align-items: center;
+    }
+    .container4 h2{
+    font-weight: 500;
+    font-size: 1.8rem; 
+    padding-bottom: 0.5rem;
+}
+.container4 .item4img{
+    padding-bottom: 0.5rem;
+    width: 100%;
+    height: 18rem;
+    margin-right: 0;
+}
+.container4 img{
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    transform: none;
+}
+.container4 p{
+    font-size: 20px;
+    text-align: center;
+}
+.container5{
+    flex-direction: column;
+}
+.container5 .item5img{
+    height: 80%;
+}
+.container5 h1{
+    text-align: center;
+}
+.container6 {
+    width: 100%;
+}
+.container6 h1{
+    font-size: 50px;
+    align-self: start;
+}
+.container6 p{
+    font-size: 24px;
+    padding-bottom: 1rem;
+}
+.container6 img{
+    align-items: start;
+    width: 100%;
+    height: 4rem;
+}
+.container7 h2{
+    font-size: 2rem;
+}
+.container7 img{
+    align-self: start;
+    width: auto;
+    height: 6rem;
+    padding-top: 1rem;
+}
+.container8{
+    width: 100%;
+}
+.container8 h2{
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    text-align: start;
+}
+.container8 img{
+    align-self: start;
+    width: auto;
+    height: 14rem;
+}
+}
